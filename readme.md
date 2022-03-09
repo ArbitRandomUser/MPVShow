@@ -46,6 +46,9 @@ first entry should always be 0 ,
 slide 1 is always from 0 -> 0 , so when started
 the video "plays first frame" and pauses at 0
 
+last entry should always be "end"
+
+
 Any seek without n/b will mess with internal
 state of the plugin , try to use only n and b
 
@@ -56,7 +59,9 @@ state of the plugin , try to use only n and b
 5 
 10 loop
 16 
-22
+22 loop
+25
+end
 ```
 save this file, copy `presentation.lua` to your
 current directory with `yourawesomevideo.mp4`,
@@ -65,5 +70,7 @@ run
 `mpv --script=presentation.lua yourawesomevideo.mp4`
 * video starts and is paused
 * press `m`       -> video is unpaused an plays till timestamp 5 where it pauses
-* press `m` again -> video plays but loops from 5 to 10
-* press `m` again -> removes the loop, continues to 10 and over to next slide and pauses at 16
+* press `m` again -> video plays but loops from timestamp 5 to 10
+* press `m` again -> removes the loop, continues to timestamp 10 and over to next slide and pauses at 16
+* press `n` -> moves to timestamp 22 and pauses
+* press `b` -> moves to timestamp timestamp 16 and pauses

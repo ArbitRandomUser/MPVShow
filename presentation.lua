@@ -7,7 +7,7 @@ local utils = require("mp.utils")
 --please make a PR.
 
 --SET SLIDESHOW INFORMATION FILE HERE
-fname=""
+fname="con2022.mp4"
 slide = 1
 
 local function mysplit(inputstr, sep)
@@ -143,8 +143,17 @@ function inc_slide(n)
    if slide<1 then
        slide=1
    end
-   slide_t = tonumber(slidedat[slide][1])
-   slide_l = slidedat[slide][2]
+   if slidedat[slide] == nil then
+       return
+   elseif slidedat[slide][1] == "end" then
+      print("set end ",slide_t) 
+      slidedat[slide][1] = tonumber(mp.get_property("duration"))
+      slide_t = tonumber(mp.get_property("duration")) 
+      slide_l = slidedat[slide][2]
+   else
+      slide_t = tonumber(slidedat[slide][1])
+      slide_l = slidedat[slide][2]
+  end
 end
 
 function unpause()
