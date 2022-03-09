@@ -19,6 +19,7 @@ in  presentation.lua and run with
 ```
  mpv --script=presentation.lua yourawesomevideo.mp4
 ```
+
 you may also want to pass --no-osd-bar to avoid annoying
 osdbar while seeking , You may also pass --no-osc-bar
 to disable the onscreen controller.
@@ -47,3 +48,22 @@ the video "plays first frame" and pauses at 0
 
 Any seek without n/b will mess with internal
 state of the plugin , try to use only n and b
+
+## Example
+
+```yourawesomevideo.mp4.slinfo
+0 
+5 
+10 loop
+16 
+22
+```
+save this file, copy `presentation.lua` to your
+current directory with `yourawesomevideo.mp4`,
+change `fname` in `presentation.lua` to the apropriate filename
+run
+`mpv --script=presentation.lua yourawesomevideo.mp4`
+video starts and is paused
+press `m`       -> video is unpaused an plays till timestamp 5 where it pauses
+press `m` again -> video plays but loops from 5 to 10
+press `m` again -> removes the loop, continues to 10 and over to next slide and pauses at 16
