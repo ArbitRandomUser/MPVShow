@@ -6,21 +6,22 @@ Broken af, but works just about enough .
 Make a file with .slinfo extension,(or any name
 and set `fname` in presentation.lua to it)
 
-Ideally we want soemthing.mp4 to auto-detect
-something.mp4.slinfo , but i didnt get that working
-for some reason `mp.getproperty("filename")` just
+Ideally we want to auto-detect
+something.mp4.slinfo when we play something.mp4
+, but i didnt get that working.
+For some reason `mp.getproperty("filename")` just
 didnt work :( . So right now manually setting 
 `fname` in presentation.lua . If you do get it working
 lemme know how .
 
-Change "fname" to apropriate .slinfo file
+Change `fname` to apropriate .slinfo file
 in  presentation.lua and run with
 
 ```
  mpv --script=presentation.lua yourawesomevideo.mp4
 ```
 
-you may also want to pass --no-osd-bar to avoid annoying
+You may also want to pass --no-osd-bar to avoid annoying
 osdbar while seeking , You may also pass --no-osc-bar
 to disable the onscreen controller.
 
@@ -32,7 +33,7 @@ it pauses if its a non loop entry or loops the slide
 infinitely if loop entry.
 
 press "m" to continue to playing slide when paused
-at slide. if in a looped slide m will remove the loop
+at slide . If in a looped slide m will remove the loop
 smoothly finish the current slide and move onto the next slide
 .
 ("default m is to mute/unmute ive overriden that
@@ -42,14 +43,16 @@ presentation.lua")
 `n` will to go to next slide. 
 
 `b` will replay the last slide  if paused at end of a non-loop slide,
-or will go the previous slide if looping the current slide
+or will go to the previous slide if looping the current slide
 
-first entry should always be 0 , 
+First entry should always be 0 , 
 slide 1 is always from 0 -> 0 , so when started
 the video "plays first frame" and pauses at 0
 
-last entry should always be "end"
-
+Last entry should always be "end",
+end means the ending timestamp of the video
+if you want the last slide to loop you can
+have `end loop` too
 
 Any seek without n/b will mess with internal
 state of the plugin , try to use only n and b
