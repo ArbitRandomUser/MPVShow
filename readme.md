@@ -36,7 +36,8 @@ Check Example at the end of this file
 
 Make your `yourawesomevideo.mp4.slinfo` in the same directory
 as `yourawesomevideo.mp4`.
-The `.slinfo` file *must* be in the current directory where `mpv` is being run.
+
+__The `.slinfo` file must be in the current directory where `mpv` is being run.__
 
 ```
  mpv  yourawesomevideo.mp4
