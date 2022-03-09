@@ -35,11 +35,11 @@ when player reaches any of the timestamp in the .slinfo
 it pauses if its a non loop entry or loops the slide
 infinitely if loop entry.
 
-press "m" to continue to playing slide when paused
-at slide . If in a looped slide m will remove the loop
+press `m` to continue to playing slide when paused
+at slide . If in a looped slide `m` will remove the loop
 smoothly finish the current slide and move onto the next slide
 .
-("default m is to mute/unmute ive overriden that
+("default `m` is to mute/unmute ive overriden that
 if you want some other key feel free to change it 
 presentation.lua")
 
@@ -52,7 +52,7 @@ First entry should always be 0 ,
 When started the video pauses at timestamp 0.
 
 Last entry should always be "end",
-end means the ending timestamp of the video
+end means the ending timestamp of the video,
 if you want the last slide to loop you can
 have `end loop` too
 
