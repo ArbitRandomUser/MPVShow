@@ -1,6 +1,5 @@
 ## MPVShow
 An mpv plugin to present videos as slideshows.
-Broken af, but works just about enough .
 
 MPVShow looks for a filename `yourawesomevideo.mp4.slinfo`
 when you play  `youraweomsevideo.mp4`, This
