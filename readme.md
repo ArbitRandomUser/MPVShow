@@ -16,7 +16,9 @@ lemme know how .
 Change "fname" to apropriate .slinfo file
 in  presentation.lua and run with
 
-`$ mpv --script=presentation.lua yourawesomevideo.mp4`
+```
+ mpv --script=presentation.lua yourawesomevideo.mp4
+```
 you may also want to pass --no-osd-bar to avoid annoying
 osdbar while seeking , You may also pass --no-osc-bar
 to disable the onscreen controller.
