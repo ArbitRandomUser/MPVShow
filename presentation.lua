@@ -99,11 +99,6 @@ function pause_on_slide(name,value)
     end
 end
 
---Dont ask me how ... somehow this just works
---mp.unobserve.. doesnt trigger around slide 1
---when decremented
---some reason, this behaviour is okay though
---at slide 1
 function nextslide()
    mp.unobserve_property(pause_on_slide)
    print("slide was",slide)
