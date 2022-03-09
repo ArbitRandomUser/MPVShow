@@ -6,13 +6,13 @@ local utils = require("mp.utils")
 --so we have to set it manually here, if you got this working
 --please make a PR.
 
---SET SLIDESHOW INFORMATION FILE HERE
-fname="con2022.mp4"
-slide = 1
+--SET FILENAME HERE
+fname="your-awesome-video.mp4"
 
 --There is a small quirk in the internal slide counter,
 --effectively slide 1 always starts at 0 and ends at 0.
 --what user would call slide 1 is just internally counted as slide 2.
+slide = 1
 
 local function mysplit(inputstr, sep)
         if sep == nil then
