@@ -1,24 +1,13 @@
 require 'mp'
 local utils = require("mp.utils")
 --fname = mp.get_property("filename")
-fname=""
---never figured out how to set fname from file
---so we set it manually here, Slideshow inf
---should be in same file with .slinfo extension
---
---every entry in .slinfo is a timestamp that indicates
---the end of the slide.Add additional keyword "loop"
---if you want that slide to loop.
---when player reaches any of the timestamp in the .slinfo
---it pauses if its a non loop entry or loops the slide
---infinitely.
---
---press "n" to go to next slide and "b" to go to previous
---
---first entry should always be 0 , 
---slide 1 is always from 0 -> 0 , so when started
---the video "plays first frame" and pauses at 0
+--Never figured out how to set fname from the mpv
+--lua api , `mp.get_property("filename")` simply never workd
+--so we have to set it manually here, if you got this working
+--please make a PR.
 
+--SET SLIDESHOW INFORMATION FILE HERE
+fname=""
 slide = 1
 
 local function mysplit(inputstr, sep)
