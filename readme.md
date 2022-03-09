@@ -1,5 +1,6 @@
 ## MPVShow
-An mpv plugin to present videos as slideshows
+An mpv plugin to present videos as slideshows.
+Broken af, but works just about enough .
 
 ##Usage
 Make a file with .slinfo extension,(or any name
@@ -28,9 +29,14 @@ it pauses if its a non loop entry or loops the slide
 infinitely if loop entry.
 
 press "m" to continue to playing slide when paused
-at slide.
-press "n" to go to next slide if stuck in
-a loop and "b" to go to previous.
+at slide. if in a looped slide m will remove the loop
+smoothly finish the current slide and move onto the next slide
+.
+("default m is to mute/unmute ive overriden that
+if you want some other key feel free to change it 
+presentation.lua")
+press "n" to go to next slide
+and "b" to go to previous.
 
 
 first entry should always be 0 , 
