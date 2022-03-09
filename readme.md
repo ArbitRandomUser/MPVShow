@@ -50,7 +50,7 @@ or will go to the previous slide if looping the current slide
 
 First entry should always be 0 , 
 slide 1 is always from 0 -> 0 , so when started
-the video "plays first frame" and pauses at 0
+the video "plays first slide" and pauses at 0
 
 Last entry should always be "end",
 end means the ending timestamp of the video
