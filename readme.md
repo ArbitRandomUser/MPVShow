@@ -2,7 +2,7 @@
 An mpv plugin to present videos as slideshows.
 Broken af, but works just about enough .
 
-##Usage
+## Usage
 Make a file with .slinfo extension,(or any name
 and set `fname` in presentation.lua to it)
 
