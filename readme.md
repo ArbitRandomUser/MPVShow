@@ -62,8 +62,8 @@ MPVShow.lua")
 or will go to the previous slide if looping the current slide
 
 
-Any seek without `n`/`b` will mess with internal
-state of the plugin , try to use only n and b
+__Any seek (for example with arrow keys) except `n`/`b` will mess with internal
+state of the plugin , Use only n and b to navigate through the plugin __
 
 ## Example
 
