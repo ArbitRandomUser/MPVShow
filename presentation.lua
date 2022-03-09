@@ -25,7 +25,6 @@ local function read_file(path)
     print(path..".slinfo")
     local file = io.open(path..".slinfo", "r") -- r read mode and b binary mode
     if not file then
-        print("retnil")
         return  nil
     end
     local content = file:read "*a" -- *a or *all reads the whole file
@@ -83,7 +82,6 @@ function pause_on_slide(name,value)
     --next_slide_t = tonumber(slidedat[next_slide][1])
     if value >= tonumber(slidedat[slide][1])  then
         --mp.command("seek " .. slidedat[slide][1] ..  " absolute")
-        print("pause on slide triggered")
         mp.set_property_native("pause",true)
         if slide_l ~= nil then
             mp.set_property_native("ab-loop-a",tonumber(slidedat[slide-1][1]))
@@ -101,10 +99,11 @@ end
 
 function nextslide()
    mp.unobserve_property(pause_on_slide)
-   print("slide was",slide)
    seekend()
    inc_slide(1)
    print("slide is now",slide)
+   --we really dont check if the word is "loop" just that its
+   --not a whitespace after timestamp, but user needn't know ;)
    if slide_l ~=nil then
        mp.set_property_native("ab-loop-a",tonumber(slidedat[slide-1][1]))
        mp.set_property_native("ab-loop-b",tonumber(slidedat[slide][1]))
@@ -115,12 +114,10 @@ function nextslide()
            mp.set_property_native("pause",false) 
    end
    mp.observe_property("time-pos","native",pause_on_slide)
-   print("..............")
 end
 
 function prevslide()
    mp.unobserve_property(pause_on_slide)
-   print("slide was",slide)
    seekprev()
    inc_slide(-1)
    print("slide is now",slide)
@@ -134,7 +131,6 @@ function prevslide()
         mp.set_property_native("pause",false) 
     end
    mp.observe_property("time-pos","native",pause_on_slide)
-   print("..............")
 end
 
 
