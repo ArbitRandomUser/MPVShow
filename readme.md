@@ -2,7 +2,7 @@
 An mpv plugin to present videos as slideshows.
 
 Clone the repo and copy MPVShow.lua to 
-`.config/.mpv/scripts` folder (if it doesnt exist make it)
+`.config/mpv/scripts` folder (if it doesnt exist make it),
 alternatively one can specify the location using `--script` 
 when calling `mpv`
 
@@ -16,11 +16,11 @@ the `.slinfo` file follows...
 
 ## Usage
 The `.slinfo` file is a list of timestamps to mark 
-end of a slide. every line should be of the form
+end of a slide. Every line should be of the form
 ```
 num [loop]
 ```
-Where `num` is a timestamp, followed by an optional `loop`.
+Where `num` is a timestamp (a number), followed by an optional keyword `loop`.
 
 The video while playing is paused when it reaches `num` timestamp
 indicating end of that slide.
