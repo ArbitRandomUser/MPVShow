@@ -1,13 +1,5 @@
-require 'mp'
-local utils = require("mp.utils")
---fname = mp.get_property("filename")
---Never figured out how to set fname from the mpv
---lua api , `mp.get_property("filename")` simply never workd
---so we have to set it manually here, if you got this working
---please make a PR.
-
---SET FILENAME HERE
-fname="your-awesome-video.mp4"
+--filename
+fname = mp.get_property_native("playlist")[1]["filename"]
 
 --There is a small quirk in the internal slide counter,
 --effectively slide 1 always starts at 0 and ends at 0.
@@ -29,6 +21,7 @@ local function read_file(path)
     print(path..".slinfo")
     local file = io.open(path..".slinfo", "r") -- r read mode and b binary mode
     if not file then
+        print("couldnt find .slinfo file")
         return  nil
     end
     local content = file:read "*a" -- *a or *all reads the whole file
