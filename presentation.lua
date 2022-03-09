@@ -10,6 +10,10 @@ local utils = require("mp.utils")
 fname="con2022.mp4"
 slide = 1
 
+--There is a small quirk in the internal slide counter,
+--effectively slide 1 always starts at 0 and ends at 0.
+--what user would call slide 1 is just internally counted as slide 2.
+
 local function mysplit(inputstr, sep)
         if sep == nil then
                 sep = "%s"
