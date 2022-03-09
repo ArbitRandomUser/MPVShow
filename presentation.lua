@@ -153,6 +153,8 @@ function inc_slide(n)
 end
 
 function unpause()
+    mp.set_property_native("ab-loop-a","no")
+    mp.set_property_native("ab-loop-b","no")
     mp.set_property_native("pause",false)
 end
 
