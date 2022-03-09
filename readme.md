@@ -13,8 +13,8 @@ open `yourawesomevideo.mp4`,
 but i could't get that working.
 For some reason `mp.getproperty("filename")` just
 didnt work :( .
-So right now manually setting `fname` in presentation.lua is the only way.
-The workflow as of now is to make a copy `presentation.lua` for every video
+So right now manually setting `fname` in MPVShow.lua is the only way.
+The workflow as of now is to make a copy `MPVShow.lua` for every video
 with the variable `fname` changed to the video's filename.
 
 If you do get it working
@@ -41,10 +41,10 @@ have `end loop` too.
 Check Example at the end of this file
 
 Make your `yourawesomevideo.mp4.slinfo`, Change `fname` to filename of
-the video (`youraweomsevideo.mp4`) in  presentation.lua
+the video (`youraweomsevideo.mp4`) in  MPVShow.lua
 and run with
 ```
- mpv --script=presentation.lua yourawesomevideo.mp4
+ mpv --script=MPVShow.lua yourawesomevideo.mp4
 ```
 
 You may also want to pass --no-osd-bar to avoid annoying
@@ -58,7 +58,7 @@ smoothly finish the current slide and move onto the next slide
 .
 ("default `m` is to mute/unmute ive overriden that
 if you want some other key feel free to change it 
-presentation.lua")
+MPVShow.lua")
 
 `n` will to go to next slide. 
 
@@ -80,11 +80,11 @@ state of the plugin , try to use only n and b
 25
 end
 ```
-Save the above in a file named `yourawesomevideo.mp4.slinfo` in the same directory as `yourawesomevideo.mp4`, copy `presentation.lua` to your
+Save the above in a file named `yourawesomevideo.mp4.slinfo` in the same directory as `yourawesomevideo.mp4`, copy `MPVShow.lua` to your
 current directory with `yourawesomevideo.mp4`,
-change `fname` in `presentation.lua` to the apropriate filename
+change `fname` in `MPVShow.lua` to the apropriate filename
 run
-`mpv --script=presentation.lua yourawesomevideo.mp4`
+`mpv --script=MPVShow.lua yourawesomevideo.mp4`
 * video starts and is paused
 * press `m`       -> video is unpaused an plays till timestamp 5 where it pauses
 * press `m` again -> video plays but loops from timestamp 5 to 10
