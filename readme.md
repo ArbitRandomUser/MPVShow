@@ -3,17 +3,21 @@ An mpv plugin to present videos as slideshows.
 Broken af, but works just about enough .
 
 MPVShow looks for a filename `yourawesomevideo.mp4.slinfo`
-when you try to open `youraweomsevideo.mp4`, This
+when you play  `youraweomsevideo.mp4`, This
 `.slinfo` file contains the information about the 
 timestamps in the video as slides , more info on how to make
 the `.slinfo` file later
 
-Ideally we want to auto-detect
-`something.mp4.slinfo` when we play `something.mp4`
-, but i didn't get that working.
+Ideally we want to auto-detect the filename when we
+open `yourawesomevideo.mp4`, 
+but i could't get that working.
 For some reason `mp.getproperty("filename")` just
-didnt work :( . So right now manually setting 
-`fname` in presentation.lua is the only way. If you do get it working
+didnt work :( .
+So right now manually setting `fname` in presentation.lua is the only way.
+The workflow as of now is to make a copy `presentation.lua` for every video
+with the variable `fname` changed to the video's filename.
+
+If you do get it working
 lemme know how .
 
 ## Usage
