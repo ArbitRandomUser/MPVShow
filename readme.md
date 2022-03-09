@@ -62,7 +62,7 @@ state of the plugin , try to use only n and b
 
 ## Example
 
-```yourawesomevideo.mp4.slinfo
+```
 0 
 5 
 10 loop
@@ -71,7 +71,7 @@ state of the plugin , try to use only n and b
 25
 end
 ```
-save this file, copy `presentation.lua` to your
+save the above in a file named `yourawesomevideo.mp4.slinfo` in the same directory as `yourawesomevideo.mp4`, copy `presentation.lua` to your
 current directory with `yourawesomevideo.mp4`,
 change `fname` in `presentation.lua` to the apropriate filename
 run
