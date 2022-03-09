@@ -49,8 +49,12 @@ presentation.lua")
 or will go to the previous slide if looping the current slide
 
 First entry should always be 0 , 
-slide 1 is always from 0 -> 0 , so when started
-the video "plays first slide" and pauses at 0
+When started the video pauses at timestamp 0.
+
+(\*There is a small quirk in the internal slide counter,
+effectively slide 1 always starts at 0 and ends at 0.
+what user would call slide 1 is just internally counted as slide 2.
+\*)
 
 Last entry should always be "end",
 end means the ending timestamp of the video
