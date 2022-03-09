@@ -17,12 +17,14 @@ local function mysplit(inputstr, sep)
         return t
 end
 
-local function read_file(path)
-    print(path..".slinfo")
-    local file = io.open(path..".slinfo", "r") -- r read mode and b binary mode
-    if not file then
-        print("couldnt find .slinfo file")
-        return  nil
+local function read_file()
+    print(fname..".slinfo")
+    dir =mp.get_property_native("working-directory")
+    print(dir.."/"..fname..".slinfo")
+    local file = io.open(dir .. "/" .. fname .. ".slinfo" , "r") 
+    if file==nil then
+        print("slinfo file not found")
+        return {{}} 
     end
     local content = file:read "*a" -- *a or *all reads the whole file
     file:close()
@@ -155,8 +157,15 @@ function unpause()
     mp.set_property_native("pause",false)
 end
 
-mp.observe_property("time-pos","native",pause_on_slide)
-mp.add_key_binding("n",nextslide)
-mp.add_key_binding("b",prevslide)
-mp.remove_key_binding("m")
-mp.add_forced_key_binding("m",unpause)
+curdir = mp.get_property_native("working-directory")
+slinfofile = io.open(curdir.."/"..fname..".slinfo", "r") -- r read mode and b binary mode
+if slinfofile==nil then
+      print("Couldnt find .slinfo file, playing like usual video")
+else
+    mp.observe_property("time-pos","native",pause_on_slide)
+    mp.add_key_binding("n",nextslide)
+    mp.add_key_binding("b",prevslide)
+    mp.remove_key_binding("m")
+    mp.add_forced_key_binding("m",unpause)
+    print("done")
+end
