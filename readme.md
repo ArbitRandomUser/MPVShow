@@ -63,7 +63,7 @@ current directory with `yourawesomevideo.mp4`,
 change `fname` in `presentation.lua` to the apropriate filename
 run
 `mpv --script=presentation.lua yourawesomevideo.mp4`
-video starts and is paused
-press `m`       -> video is unpaused an plays till timestamp 5 where it pauses
-press `m` again -> video plays but loops from 5 to 10
-press `m` again -> removes the loop, continues to 10 and over to next slide and pauses at 16
+* video starts and is paused
+* press `m`       -> video is unpaused an plays till timestamp 5 where it pauses
+* press `m` again -> video plays but loops from 5 to 10
+* press `m` again -> removes the loop, continues to 10 and over to next slide and pauses at 16
