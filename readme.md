@@ -63,7 +63,7 @@ or will go to the previous slide if looping the current slide
 
 
 __Any seek (for example with arrow keys) except `n`/`b` will mess with internal
-state of the plugin , Use only n and b to navigate through the plugin __
+state of the plugin , you can use only n and b to navigate the video __
 
 ## Example
 
