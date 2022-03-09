@@ -1,23 +1,18 @@
 ## MPVShow
 An mpv plugin to present videos as slideshows.
 
-MPVShow looks for a filename `yourawesomevideo.mp4.slinfo`
+Clone the repo and copy MPVShow.lua to 
+`.config/.mpv/scripts` folder (if it doesnt exist make it)
+alternatively one can specify the location using `--script` 
+when calling `mpv`
+
+MPVShow looks for a filename `yourawesomevideo.mp4.slinfo` in the current directory
 when you play  `youraweomsevideo.mp4`, This
 `.slinfo` file contains the information about the 
-timestamps in the video as slides , more info on how to make
-the `.slinfo` file later
+timestamps in the video as slides,if `.slifno` file is not found it plays the file like a 
+normal video, Info on how to make
+the `.slinfo` file follows...
 
-Ideally we want to auto-detect the filename when we
-open `yourawesomevideo.mp4`, 
-but i could't get that working.
-For some reason `mp.getproperty("filename")` just
-didnt work :( .
-So right now manually setting `fname` in MPVShow.lua is the only way.
-The workflow as of now is to make a copy `MPVShow.lua` for every video
-with the variable `fname` changed to the video's filename.
-
-If you do get it working
-lemme know how .
 
 ## Usage
 The `.slinfo` file is a list of timestamps to mark 
@@ -39,15 +34,14 @@ if you want the last slide to loop you can
 have `end loop` too.
 Check Example at the end of this file
 
-Make your `yourawesomevideo.mp4.slinfo`, Change `fname` to filename of
-the video (`youraweomsevideo.mp4`) in  MPVShow.lua
+Make your `yourawesomevideo.mp4.slinfo` in the current directory
 and run with
 ```
- mpv --script=MPVShow.lua yourawesomevideo.mp4
+ mpv  yourawesomevideo.mp4
 ```
 
-You may also want to pass --no-osd-bar to avoid annoying
-osdbar while seeking , You may also pass --no-osc-bar
+You may also want to pass `--no-osd-bar` to avoid annoying
+osdbar while seeking , You may also pass `--no-osc-bar`
 to disable the onscreen controller.
 
 ## Keybindings
@@ -79,11 +73,9 @@ state of the plugin , try to use only n and b
 25
 end
 ```
-Save the above in a file named `yourawesomevideo.mp4.slinfo` in the same directory as `yourawesomevideo.mp4`, copy `MPVShow.lua` to your
-current directory with `yourawesomevideo.mp4`,
-change `fname` in `MPVShow.lua` to the apropriate filename
+Save the above in a file named `yourawesomevideo.mp4.slinfo` in the same directory as `yourawesomevideo.mp4`,
 run
-`mpv --script=MPVShow.lua yourawesomevideo.mp4`
+`mpv yourawesomevideo.mp4`
 * video starts and is paused
 * press `m`       -> video is unpaused an plays till timestamp 5 where it pauses
 * press `m` again -> video plays but loops from timestamp 5 to 10
