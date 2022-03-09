@@ -38,9 +38,11 @@ smoothly finish the current slide and move onto the next slide
 ("default m is to mute/unmute ive overriden that
 if you want some other key feel free to change it 
 presentation.lua")
-press "n" to go to next slide
-and "b" to go to previous.
 
+`n` will to go to next slide. 
+
+`b` will replay the last slide  if paused at end of a non-loop slide,
+or will go the previous slide if looping the current slide
 
 first entry should always be 0 , 
 slide 1 is always from 0 -> 0 , so when started
@@ -72,5 +74,5 @@ run
 * press `m`       -> video is unpaused an plays till timestamp 5 where it pauses
 * press `m` again -> video plays but loops from timestamp 5 to 10
 * press `m` again -> removes the loop, continues to timestamp 10 and over to next slide and pauses at 16
-* press `n` -> moves to timestamp 22 and pauses
-* press `b` -> moves to timestamp timestamp 16 and pauses
+* press `n` -> moves to timestamp 22 plays to 25 and pauses
+* press `b` -> moves to timestamp timestamp 22 and plays to 25 and pauses
