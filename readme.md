@@ -34,8 +34,10 @@ if you want the last slide to loop you can
 have `end loop` too.
 Check Example at the end of this file
 
-Make your `yourawesomevideo.mp4.slinfo` in the current directory
-and run with
+Make your `yourawesomevideo.mp4.slinfo` in the same directory
+as `yourawesomevideo.mp4`.
+The `.slinfo` file *must* be in the current directory where `mpv` is being run.
+
 ```
  mpv  yourawesomevideo.mp4
 ```
