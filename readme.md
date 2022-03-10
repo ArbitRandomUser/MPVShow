@@ -30,8 +30,13 @@ Check Keybindings to see how to navigate through slides.
 First entry should always be 0 , 
 Last entry should always be "end",
 end means the ending timestamp of the video,
-if you want the last slide to loop you can
-have `end loop` too.
+
+For some reason , right now the end slide cannot have `loop`
+there is also a bug where hitting `b` when the video has finished
+playing causes it to go the beginning of the previous slide
+(as opposed to the normal behaviour of going to begining of the
+current slide that just played)
+
 Check Example at the end of this file
 
 Make your `yourawesomevideo.mp4.slinfo` in the same directory
